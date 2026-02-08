@@ -826,8 +826,8 @@ Este sistema de gestión de contactos es una aplicación educativa que demuestra
 ## Contacto y Soporte
 
 Para preguntas, sugerencias o reporte de errores:
-- **Email:** [tu-email]
-- **GitHub:** [tu-repositorio]
+- **Email:** [german.riveross@gmail.com]
+- **GitHub:** [https://github.com/german-rs/GestionContactos]
 
 ---
 
