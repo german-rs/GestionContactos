@@ -1,22 +1,33 @@
 from src.fuentes.fuente_agenda_class import Agenda
+from tabulate import tabulate
 
-
-def main():
+def menu():
+    print("\n")
     print("Menú del sistema de contactos")
     print("=============================")
     print()
 
-    # Opciones del menú
-    print("1. Agregar contacto")
-    print("2. Buscar contacto")
-    print("3. Editar contacto")
-    print("4. Eliminar contacto")
-    print("5. Listar contactos")
-    print("9. Salir del sistema")
+    # Preparar datos para el menú
+    opciones_menu = [
+        ["1", "Agregar contacto"],
+        ["2", "Buscar contacto"],
+        ["3", "Editar contacto"],
+        ["4", "Eliminar contacto"],
+        ["5", "Listar contactos"],
+        ["9", "Salir del sistema"]
+    ]
+
+    # Mostrar menú en tabla
+    print(tabulate(opciones_menu, headers=["Opción", "Acción"], tablefmt="grid"))
+    print()
+
+
+def main():
 
     agenda = Agenda()  # Instanciando la clase
     opcion = ""
     while opcion != 9:
+        menu()
         opcion = int(input("Seleccione una opción: "))
 
         if opcion == 1:
