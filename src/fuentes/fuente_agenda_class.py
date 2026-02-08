@@ -1,6 +1,13 @@
 from src.fuentes.fuente_contacto_model_class import ContactoModel
 from tabulate import tabulate
 
+RESET = "\033[0m"
+ROJO = "\033[31m"
+VERDE = "\033[32m"
+AMARILLO = "\033[33m"
+
+
+
 class Agenda:
     def __init__(self) -> None:
         self.contacto: list = []  # lista con objetos
@@ -20,12 +27,16 @@ class Agenda:
         nuevo_contacto = ContactoModel(nombre, telefono, correo, direccion)
         self.contacto.append(nuevo_contacto)
 
-        print("Contacto agregado exitosamente.")
+        print( f"{VERDE}¡Contacto agregado exitosamente!{RESET}")
 
     def buscar_contacto(self) -> bool:
-        print("\n")
         print("Buscar contacto")
         print("----------------")
+
+        # Validar si hay contactos registrados
+        if len(self.contacto) == 0:
+            print(f"{ROJO}No hay contactos registrados para buscar.{RESET}")
+            return False
 
         buscar = input("Ingrese el nombre/teléfono del contacto a buscar: ")
         encontrado = False
@@ -42,6 +53,7 @@ class Agenda:
 
         return encontrado
 
+
     def editar_contacto(self):
         print("\n")
         print("Editar contacto")
@@ -54,12 +66,21 @@ class Agenda:
 
         print("Contactos disponibles:")
         print()
+
+        # Preparar datos para la tabla
+        datos_tabla = []
         for contacto in self.contacto:
-            print(f"Nombre: {contacto.nombre}")
-            print(f"Teléfono: {contacto.telefono}")
-            print(f"Correo: {contacto.correo}")
-            print(f"Dirección: {contacto.direccion}")
-            print("----------------")
+            datos_tabla.append([
+                contacto.nombre,
+                contacto.telefono,
+                contacto.correo,
+                contacto.direccion
+            ])
+
+        # Mostrar tabla
+        encabezados = ["Nombre", "Teléfono", "Correo", "Dirección"]
+        print(tabulate(datos_tabla, headers=encabezados, tablefmt="grid"))
+        print()
 
         # Buscar el contacto a editar
         buscar = input("Ingrese el nombre/teléfono del contacto a editar: ")
@@ -70,11 +91,17 @@ class Agenda:
                 encontrado = True
                 print()
                 print("Datos actuales del contacto:")
-                print(f"Nombre actual: {contacto.nombre}")
-                print(f"Teléfono actual: {contacto.telefono}")
-                print(f"Correo actual: {contacto.correo}")
-                print(f"Dirección actual: {contacto.direccion}")
+
+                # Mostrar datos actuales en tabla
+                datos_actual = [[
+                    contacto.nombre,
+                    contacto.telefono,
+                    contacto.correo,
+                    contacto.direccion
+                ]]
+                print(tabulate(datos_actual, headers=encabezados, tablefmt="grid"))
                 print()
+
                 print("Ingrese los nuevos datos (presione Enter para mantener el valor actual):")
 
                 # Editar cada campo
@@ -95,7 +122,7 @@ class Agenda:
                     contacto.direccion = nueva_direccion
 
                 print()
-                print("Contacto editado exitosamente.")
+                print(f"{VERDE}¡Contacto editado exitosamente!{RESET}")
                 break
 
         if not encontrado:
@@ -113,12 +140,21 @@ class Agenda:
 
         print("Contactos disponibles:")
         print()
+
+        # Preparar datos para la tabla
+        datos_tabla = []
         for contacto in self.contacto:
-            print(f"Nombre: {contacto.nombre}")
-            print(f"Teléfono: {contacto.telefono}")
-            print(f"Correo: {contacto.correo}")
-            print(f"Dirección: {contacto.direccion}")
-            print("----------------")
+            datos_tabla.append([
+                contacto.nombre,
+                contacto.telefono,
+                contacto.correo,
+                contacto.direccion
+            ])
+
+        # Mostrar tabla
+        encabezados = ["Nombre", "Teléfono", "Correo", "Dirección"]
+        print(tabulate(datos_tabla, headers=encabezados, tablefmt="grid"))
+        print()
 
         # Buscar el contacto a eliminar
         buscar = input("Ingrese el nombre/teléfono del contacto a eliminar: ")
@@ -129,19 +165,24 @@ class Agenda:
                 encontrado = True
                 print()
                 print("Contacto encontrado:")
-                print(f"Nombre: {contacto.nombre}")
-                print(f"Teléfono: {contacto.telefono}")
-                print(f"Correo: {contacto.correo}")
-                print(f"Dirección: {contacto.direccion}")
+
+                # Mostrar contacto encontrado en tabla
+                datos_encontrado = [[
+                    contacto.nombre,
+                    contacto.telefono,
+                    contacto.correo,
+                    contacto.direccion
+                ]]
+                print(tabulate(datos_encontrado, headers=encabezados, tablefmt="grid"))
                 print()
 
                 # Confirmar la eliminación
-                confirmacion = input("¿Está seguro que desea eliminar este contacto? (s/n): ")
+                confirmacion = input(f"{ROJO}¿Está seguro que desea eliminar este contacto? (s/n): {RESET}")
 
                 if confirmacion.lower() == 's':
                     self.contacto.remove(contacto)
                     print()
-                    print("Contacto eliminado exitosamente.")
+                    print(f"{VERDE}Contacto eliminado exitosamente!{RESET}")
                 else:
                     print()
                     print("Eliminación cancelada.")
@@ -151,7 +192,6 @@ class Agenda:
             print("Contacto no encontrado.")
 
     def listar_contacto(self):
-        print("\n")
         print("Listar contactos")
         print("----------------")
 
