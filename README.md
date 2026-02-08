@@ -817,7 +817,8 @@ Este sistema de gestión de contactos es una aplicación educativa que demuestra
 - ✅ Uso de librerías de terceros
 - ✅ Código estructurado y mantenible
 
-**Autor:** [Tu Nombre]  
+**Autor:** Germán Riveros S.
+**Curso:** RTD-25-01-01-0002-1
 **Fecha:** Febrero 2026  
 **Versión:** 1.0
 
@@ -826,8 +827,8 @@ Este sistema de gestión de contactos es una aplicación educativa que demuestra
 ## Contacto y Soporte
 
 Para preguntas, sugerencias o reporte de errores:
-- **Email:** [german.riveross@gmail.com]
-- **GitHub:** [https://github.com/german-rs/GestionContactos]
+- **Email:** german.riveross@gmail.com
+- **GitHub:** https://github.com/german-rs/GestionContactos
 
 ---
 
