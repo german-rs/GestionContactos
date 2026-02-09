@@ -2,15 +2,16 @@
 
 ## Índice
 1. [Descripción General](#descripción-general)
-2. [Estructura del Proyecto](#estructura-del-proyecto)
-3. [Arquitectura del Sistema](#arquitectura-del-sistema)
-4. [Módulos y Componentes](#módulos-y-componentes)
-5. [Dependencias](#dependencias)
-6. [Instalación y Configuración](#instalación-y-configuración)
-7. [Guía de Ejecución](#guía-de-ejecución)
-8. [Funcionalidades Detalladas](#funcionalidades-detalladas)
-9. [Características Técnicas](#características-técnicas)
-10. [Posibles Mejoras Futuras](#posibles-mejoras-futuras)
+2. [Video Demostración](#video-demostración)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Arquitectura del Sistema](#arquitectura-del-sistema)
+5. [Módulos y Componentes](#módulos-y-componentes)
+6. [Dependencias](#dependencias)
+7. [Instalación y Configuración](#instalación-y-configuración)
+8. [Guía de Ejecución](#guía-de-ejecución)
+9. [Funcionalidades Detalladas](#funcionalidades-detalladas)
+10. [Características Técnicas](#características-técnicas)
+11. [Posibles Mejoras Futuras](#posibles-mejoras-futuras)
 
 ---
 
@@ -19,9 +20,17 @@
 Sistema de gestión de contactos desarrollado en Python para entorno de consola/terminal. Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una agenda de contactos con una interfaz de usuario en formato de tabla utilizando la librería `tabulate`.
 
 **Versión:** 1.0  
-**Lenguaje:** Python 3.x  
+**Lenguaje:** Python 3.13  
 **Tipo de Aplicación:** Consola/Terminal  
 **Paradigma:** Programación Orientada a Objetos (POO)
+
+---
+
+## Video Demostración
+
+[![Video Demostración del Sistema](https://img.youtube.com/vi/2GnSjty2BI4/maxresdefault.jpg)](https://youtu.be/2GnSjty2BI4)
+
+*Click en la imagen para ver el video completo*
 
 ---
 
